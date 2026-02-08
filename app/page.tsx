@@ -13,7 +13,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen p-4 bg-gradient-to-br from-black-300 to-red-800 overflow-hidden">
-      <main className="min-h-screen flex items-center justify-center">
+      <main className="min-h-[90vh] flex items-center justify-center">
         <div className="bg-white rounded-3xl shadow-2xl p-8 text-center max-w-sm w-full animate-in zoom-in md:max-w-3xl md:p-16">
           {!yesClicked ? (
             <>
