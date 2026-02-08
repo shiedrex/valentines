@@ -6,9 +6,12 @@ export default function Home() {
   const [noStyle, setNoStyle] = useState({});
 
   const moveNoButton = () => {
-    const x = Math.random() * 200 - 100;
-    const y = Math.random() * 200 - 100;
-    setNoStyle({ transform: `translate(${x}px, ${y}px)` });
+    const x = Math.random() * 150 - 75; // left/right
+    const y = Math.random() * 100 - 50; // up/down
+    setNoStyle({
+      transform: `translate(${x}px, ${y}px)`,
+      transition: 'transform 0.2s ease',
+    });
   };
 
   return (
@@ -20,7 +23,7 @@ export default function Home() {
               <h1 className="text-3xl font-bold text-pink-500 mb-2 md:text-7xl">
                 Will you be my Valentine? 💘
               </h1>
-              <p className="text-gray-600 m-4 text-3xl md:m-8">Feb. 14, 2026</p>
+              <p className="text-gray-600 m-4 text-2xl md:m-8 md:text-3xl">Feb. 14, 2026</p>
 
               <div className="flex justify-center gap-4 relative">
                 <button
@@ -32,6 +35,7 @@ export default function Home() {
 
                 <button
                   onMouseEnter={moveNoButton}
+                  onTouchStart={moveNoButton}
                   style={noStyle}
                   className="px-6 py-2 max-w-[200] w-full block h-12 rounded-full bg-gray-200 text-gray-700 transition"
                 >
@@ -41,10 +45,10 @@ export default function Home() {
             </>
           ) : (
             <>
-              <h2 className="text-4xl font-bold text-pink-500 mb-2 md:text-6xl">
+              <h2 className="text-3xl font-bold text-pink-500 mb-2 md:text-6xl">
                 YAY 🥰 <span className="block m-5">HA-VAL-DAY!!</span>
               </h2>
-              <p className="text-gray-600 text-3xl">
+              <p className="text-gray-600 text-2xl md:text-3xl">
                 You just made my heart very happy 💕
               </p>
               <a
